@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:pos_web/screen/home.dart';
 
 import '../constant/colors.dart';
 
@@ -12,7 +13,12 @@ class Mainpage extends StatefulWidget {
   State<Mainpage> createState() => _MainpageState();
 }
 
-bool menu1 = true, menu2 = false, menu3 = false, menu4 = false;
+bool menu1 = true,
+    menu2 = false,
+    menu3 = false,
+    menu4 = false,
+    menu5 = false,
+    menu6 = false;
 
 class _MainpageState extends State<Mainpage> {
   @override
@@ -29,8 +35,9 @@ class _MainpageState extends State<Mainpage> {
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),
                         bottomRight: Radius.circular(20))),
-                margin: EdgeInsets.only(top: 100, bottom: 100, right: 20),
+                margin: EdgeInsets.only(right: 20),
                 width: 70,
+                height: 650,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -95,18 +102,24 @@ class _MainpageState extends State<Mainpage> {
               ),
               Container(
                   decoration: BoxDecoration(
-                      color: backgroundAppColor,
+                      color: backgroundAppColorWhite,
                       borderRadius: BorderRadius.circular(20)),
                   margin: EdgeInsets.symmetric(vertical: 20),
                   width: MediaQuery.of(context).size.width * 0.92,
                   height: MediaQuery.of(context).size.width * 0.92,
                   child: (menu1 == true)
-                      ? Text('data')
+                      ? HomeScreen()
                       : (menu2 == true)
                           ? Text('data2')
                           : (menu3 == true)
                               ? Text('data3')
-                              : Text('data4')),
+                              : (menu4 == true)
+                                  ? Text('data4')
+                                  : (menu5 == true)
+                                      ? Text('data5')
+                                      : (menu6 == true)
+                                          ? Text('data5')
+                                          : Text('data4')),
             ],
           ),
         ),
